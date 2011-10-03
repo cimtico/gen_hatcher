@@ -1,0 +1,13 @@
+<p id="notice"><%%= notice %></p>
+
+<h1><%= singular_table_name.humanize %> Information</h1>
+<% attributes.each do |attribute| -%>
+<p>
+  <label><%= attribute.human_name %>:</label>
+  <%%= @<%= singular_table_name %>.<%= attribute.name %> %>
+</p>
+
+<% end -%>
+
+<%%= link_to 'Edit', edit_<%= singular_table_name %>_path(@<%= singular_table_name %>), :class => 'link-button' %> |
+<%%= link_to 'Back', <%= index_helper %>_path, :class => 'link-button' %>

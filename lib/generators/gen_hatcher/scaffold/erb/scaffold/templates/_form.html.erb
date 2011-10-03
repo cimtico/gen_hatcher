@@ -1,0 +1,10 @@
+<%%= simple_form_for @<%= singular_table_name %>, :html => {:class => ''} do |f| %>
+<% attributes.each do |attribute| -%>
+  <% unless attribute.type == :references %>
+  <%%= f.input :<%= attribute.name %> %>
+  <% else %>
+  <%%= f.association :<%= attribute.name %> %>
+  <% end %>
+<% end -%>
+  <%%= f.button :submit %>
+<%% end %>
