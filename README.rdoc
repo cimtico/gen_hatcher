@@ -1,0 +1,44 @@
+== Welcome to GenHatcher
+
+GenHatcher is a Rails scaffold generator template that hooks into the Rails generators workflow.
+It includes everything needed to create a migration, model and even a scaffold, using customized templates from the Rails Framework.
+
+To create your own generator simply copy this repository, rename gen_hatcher to whichever 
+namespace you want and modify the desired templates to match your needs.
+This may go from adding extra comment lines, to generating new methods based on the
+generator information.
+
+These files were extracted from the Rails Framework and modified as necessary to create a
+functional gem that would provide scaffold-like generators who's templates could be customized.
+
+
+== Getting Started
+
+1. Download the gen_hatcher code
+
+    git clone https://github.com/cimtico/gen_hatcher.git
+
+2. Rename gen_hatcher files to the desired namespace
+
+    mv gen_hatcher.gemspec hatcher.gemspec
+    mv lib/generators/gen_hatcher lib/generators/hatcher
+    ...
+
+3. Change GenHatcher module namespace inside files to the desired namespace
+
+    gedit lib/generators/hatcher/hatcher_helpers.rb
+    
+    module GenHatcher .... => module Hatcher
+
+4. Modify the required templates
+
+    gedit lib/generators/gen_hatcher/scaffold/erb/scaffold/templates/*
+
+5. Build your gem
+
+	rake install
+    
+== License
+
+This code is released under the MIT license.
+
